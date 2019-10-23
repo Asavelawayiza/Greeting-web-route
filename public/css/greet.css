@@ -1,0 +1,61 @@
+.body{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.name {
+  justify-content: center;
+  display: flex;
+
+}
+
+h1 {
+  justify-content: center;
+  display: flex;
+  font-size: 80px;
+}
+
+.language {
+  justify-content: center;
+  display: flex;
+  font-size: 15px;
+  }
+  
+  .button {
+    justify-content: center;
+    display: flex;
+    font-size: 25px;
+   }
+
+   .msg {
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+   }
+
+   
+   .counter{
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+   }
+
+   .col-12{
+      justify-content: center;
+      display: flex;
+
+   }
+   .error{
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    color: crimson;
+   }
+   .success{
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    color: green;
+   }
+
+    

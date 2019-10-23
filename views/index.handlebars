@@ -1,0 +1,92 @@
+<div class="a">
+    <h1>Greetings Web App</h1>
+
+</div>
+
+{{#if messages.info}}
+<div class="row">
+    <div class="col-12">
+        <div class="error"> {{messages.info}} </div>
+    </div>
+</div>
+{{/if}}
+
+
+{{#if messages.success}}
+<div class="row">
+    <div class="col-12">
+        <div class="success"> {{messages.success}} </div>
+    </div>
+</div>
+{{/if}}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="name">
+            <form method="POST" action="/greetings">
+                Name:
+                <input type="text" class="inputName" name="firstname" placeholder="enter a name" value="">
+                <div>
+                    <label class="">
+                        <span>
+                            <input type="radio" value="Xhosa" name="myLanguage" class="radio-inline">Xhosa<br>
+                        </span>
+                    </label>
+
+                    <label class="">
+                        <span>
+                            <input type="radio" value="English" name="myLanguage" class="radio-inline">English<br>
+                        </span>
+                    </label>
+
+                    <label class="">
+                        <span>
+                            <input type="radio" value="Afrikaans" name="myLanguage" class="radio-inline">Afrikaans
+                        </span>
+                    </label>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <p class="msg"></p>
+                        Greeted names: <p class="counter">{{caltulate}}</p>
+                    </div>
+                </div>
+
+                {{!-- <div class="row">
+                    <div class="col-12">
+                    </div class="greeted">
+                    <a href="/actions">Greeted</a>
+                </div>
+        </div>
+    </div> --}}
+
+    <button type="submit">Greet</button>
+    </form>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="greeting-text">{{name}}</div>
+    </div>
+</div>
+
+<form method="POST" action="/actions">
+    <div class="row">
+        <div class="col-12">
+            <a href="/actions">Greeted</a>
+        </div>
+    </div>
+</form>
+
+<form method="POST" action="/counter/:user">
+    <div class="row">
+        <div class="col-12">
+            <a href="/counter/:user"></a>
+        </div>
+    </div>
+</form>
