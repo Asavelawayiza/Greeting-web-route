@@ -1,24 +1,24 @@
 <div class="row">
     <h1>Greeted Names</h1>
     <table class="table table-sm">
-        <thead>
-            <tr>
-                <th>Greeted Names</th>
-              
-                
-            </tr>
-        </thead>
-
+     
         <tbody>
-            
+
+
             {{#each actions}}
-            <tr>
-                <td>{{Name}}</td>
-            </tr>
+            <ul>
+                                <a href="/counter/{{greet_name}}">
+
+                {{!-- <a href="/counter/:user{{actions}}"> --}}
+                    <li>{{greet_name}}</li>
+        
+                </a>
+            </ul>
             {{/each}}
-
-           
+    
         </tbody>
-
+    
     </table>
 </div>
+
+

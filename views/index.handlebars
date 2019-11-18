@@ -24,9 +24,10 @@
 <div class="row">
     <div class="col-12">
         <div class="name">
-            <form method="POST" action="/greetings">
+            <form method="POST" action="/">
                 Name:
-                <input type="text" class="inputName" name="firstname" placeholder="enter a name" value="">
+                <input type="text" class="inputName" maxlength="25" name="firstname" placeholder="enter a name" value=""
+                onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
                 <div>
                     <label class="">
                         <span>
@@ -50,28 +51,38 @@
                 <div class="row">
                     <div class="col-12">
                         <p class="msg"></p>
-                        Greeted names: <p class="counter">{{caltulate}}</p>
+                        {{!-- Greeted names: <p class="counter">{{caltulate}}</p> --}}
+                    
                     </div>
                 </div>
 
-                {{!-- <div class="row">
-                    <div class="col-12">
-                    </div class="greeted">
-                    <a href="/actions">Greeted</a>
-                </div>
-        </div>
-    </div> --}}
-
-    <button type="submit">Greet</button>
+               
+    <button class="button" type="submit">Greet</button>
     </form>
 </div>
 </div>
 </div>
 
+<form method="POST" action="/clear">
+    <div class="row">
+        <div class="col-12">
+            <div class="clear">
+            {{caltulate}}
+            </div>
+           <button class="button" type="submit">Clear</button>
+        </div>
+    </div>
+</form>
+
+
+
 
 <div class="row">
     <div class="col-12">
-        <div class="greeting-text">{{name}}</div>
+        <div class="greeting-text">
+            <h4>{{name}}</h4>
+
+            </div>
     </div>
 </div>
 
@@ -83,10 +94,4 @@
     </div>
 </form>
 
-<form method="POST" action="/counter/:user">
-    <div class="row">
-        <div class="col-12">
-            <a href="/counter/:user"></a>
-        </div>
-    </div>
-</form>
+

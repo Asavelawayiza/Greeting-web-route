@@ -1,52 +1,63 @@
 const assert = require("assert");
 const greeting = require("../greeting");
+const pg = require("pg");
+const   Pool = pg.Pool;
+
+const connectionString = process.env.DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/mydb'
+
+const pool = new Pool({
+  connectionString
+});
 
 
 describe('greeting test' , function(){
 
-    var instance = greeting();
+    var instance = greeting(pool);
+// console.log(instance.language('Asa', 'english'));
 
-    it('should greet Asavela in English' , function(){
-       assert.deepEqual(instance.language('asavela', 'English'), "Hello, Asavela!");
+    it('should greet Asavela in English' , async function(){
+
+        await instance.language('Asavela', 'English')
+        let names = await instance.messaging();
+       assert.equal(names , "Hello, Asavela!");
 
     })
 
-    it('should greet Asavela in isiXhosa' , function(){
-        assert.deepEqual(instance.language('asavela', 'Xhosa'), "Molo, Asavela!");
+    it('should greet Asavela in isiXhosa' , async function(){
+
+        await instance.language('Asavela', 'Xhosa')
+        let names = await instance.messaging()
+        assert.equal(names, "Molo, Asavela!");
 
     })
     
-    it('should greet Asavela in Afrikaans' , function(){
-         assert.deepEqual(instance.language('asavela', 'Afrikaans'), "Hallo, Asavela!");
+    it('should greet Asavela in Afrikaans' , async function(){
+        await instance.language('Asavela', 'Afrikaans')
+        let names = await instance.messaging();
+         assert.deepEqual(names , "Hallo, Asavela!");
 
     })
 
-    it('should return error message if no name is entered' , function(){
-         assert.deepEqual(instance.language('', 'English'), "please enter a name!");
 
-    })
-    it("it should give error message if there's no language selected", function () {
-     
-        assert.equal(instance.language('Asavela', ''), "please select language");
-
-    });
-    it("it should give error message if you enter numbers", function () {
-        assert.equal(instance.language('59624', 'Afrikaans'), "Does not take in numbers");
-
-    });
-    it('it should greet the name entered and count it once', function () {
-        
-         instance.keepName("Asavela")
-         instance.keepName("Asavela")
-        assert.deepEqual(1, instance.counter());
-
-    })
-    it('it should increment the counter when a different name is entered', function() {
+    it('should display how many times a user have been greeted', async function () {
       
-            instance.keepName('asa');
-            // instance.keepName('Asavela')
-            // instance.keepName('demi');
-            assert.equal(3, instance.counter());
+        await instance.language('Asavela', 'Afrikaans')
+        await instance.language('Asavela', 'Afrikaans') 
+
+        let number = await instance.getCounter('Asavela');
+        
+        assert.equal(number, 2);
+    });
+
+    it('it should increment the counter when a different name is entered',async function() {
+      
+        
+        await instance.keepName('asa');
+        await instance.keepName('Asavela')
+        await instance.keepName('demi');
+
+        let counts = await instance.counter()   
+            assert.equal(counts ,3);
     })
     
 

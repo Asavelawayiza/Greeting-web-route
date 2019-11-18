@@ -1,57 +1,116 @@
+/* html {
+  background-image: url("/css/image/greet.jpeg");
+  background-size: cover;
+  font-family: "Boogaloo", cursive;
+  justify-content: center;
+display: flex;
+font-size: 60px;
+} */
+
 .body{
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
 
 .name {
+  font-family: "Boogaloo", cursive;
+  color: black;
   justify-content: center;
   display: flex;
 
 }
+h4{
+
+  font-family: "Boogaloo", cursive;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+  justify-content: center;
+  display: flex;  
+}
 
 h1 {
+  font-family: "Boogaloo", cursive;
+  color: black;
   justify-content: center;
   display: flex;
   font-size: 80px;
 }
 
-.language {
+.language { 
+   font-family: "Boogaloo", cursive;
+   color: black;
   justify-content: center;
   display: flex;
   font-size: 15px;
   }
+
+    .clear{
+padding: 0.5em;
+font-size: 25px; 
+    }
   
-  .button {
-    justify-content: center;
-    display: flex;
-    font-size: 25px;
-   }
+    .button {
+  background-color: #4CAF50;
+  box-shadow: none;
+  outline: none;
+  font-style: italic;
+  border: 2px solid black;
+  font-size: 19px;
+  color: black;
+  height: 30px;
+  width: 150px;
+  border-radius: 6px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+}
 
    .msg {
+    font-family: "Boogaloo", cursive;
+    color: black;
+
     justify-content: center;
     display: flex;
     font-weight: bold;
+    font-size: 10px;
    }
 
    
    .counter{
+    font-family: "Boogaloo", cursive;
+    color: black;
+
     justify-content: center;
     display: flex;
     font-weight: bold;
+    font-size: 15px;
    }
 
    .col-12{
+    font-family: "Boogaloo", cursive;
+
       justify-content: center;
       display: flex;
+      color: black;
+
 
    }
    .error{
+    font-family: "Boogaloo", cursive;
+font-size: 20px;
     justify-content: center;
     display: flex;
     font-weight: bold;
     color: crimson;
    }
    .success{
+    font-family: "Boogaloo", cursive;
+    font-size: 20px;
+
     justify-content: center;
     display: flex;
     font-weight: bold;
