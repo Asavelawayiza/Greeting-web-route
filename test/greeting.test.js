@@ -5,9 +5,17 @@ const Pool = pg.Pool;
 
 const connectionString = process.env.DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/mydb'
 
+
+let useSSL = false;
+let local = process.env.LOCAL || false;
+if (process.env.DATABASE_URL && !local) {
+    useSSL = true;
+}
 const pool = new Pool({
-    connectionString
+    connectionString,
+    ssl: useSSL
 });
+
 
 
 describe('greeting test', function () {
@@ -20,6 +28,7 @@ describe('greeting test', function () {
 
 
     it('should greet Asavela in English', async function () {
+        await pool.query("delete from allnames");
 
         await instance.language('Asavela', 'English')
         let names = await instance.messaging();
@@ -28,6 +37,7 @@ describe('greeting test', function () {
     })
 
     it('should greet Asavela in isiXhosa', async function () {
+        await pool.query("delete from allnames");
 
         await instance.language('Asavela', 'Xhosa')
         let names = await instance.messaging()
@@ -36,6 +46,8 @@ describe('greeting test', function () {
     })
 
     it('should greet Asavela in Afrikaans', async function () {
+        await pool.query("delete from allnames");
+       
         await instance.language('Asavela', 'Afrikaans')
         let names = await instance.messaging();
 
@@ -45,6 +57,7 @@ describe('greeting test', function () {
 
 
     it('should display how many times a user have been greeted', async function () {
+        await pool.query("delete from allnames");
 
         await instance.language('Nana', 'Afrikaans')
         await instance.language('Nana', 'Afrikaans')
@@ -54,6 +67,7 @@ describe('greeting test', function () {
     });
 
     it('it should increment the counter when a different name is entered', async function () {
+ await pool.query("delete from allnames");
 
         await instance.language('asa');
         await instance.language('Asavela')
@@ -64,7 +78,8 @@ describe('greeting test', function () {
     })
 
     it('it should not increment when the same name is entered', async function () {
-
+ await pool.query("delete from allnames");
+ 
         await instance.language('Asavela');
         await instance.language('Asavela');
         let counters = await instance.counter()
