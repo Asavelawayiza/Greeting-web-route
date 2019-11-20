@@ -93,6 +93,7 @@ module.exports = function greeting(pool) {
 
   async function clearCounter () {
     var clear = await pool.query('delete from allnames');
+    
     return clear;
 }
 

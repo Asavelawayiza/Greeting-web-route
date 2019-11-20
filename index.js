@@ -121,6 +121,7 @@ app.get('/counter/:user', async function (req, res) {
 
 app.post('/clear', async function (req, res) {
   let clear = await greet.clearCounter();
+ 
   res.redirect('/');
 });
 

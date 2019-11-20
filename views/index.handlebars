@@ -27,25 +27,17 @@
             <form method="POST" action="/">
                 Name:
                 <input type="text" class="inputName" maxlength="25" name="firstname" placeholder="enter a name" value=""
-                onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">  {{caltulate}}
                 <div>
-                    <label class="">
-                        <span>
-                            <input type="radio" value="Xhosa" name="myLanguage" class="radio-inline">Xhosa<br>
-                        </span>
-                    </label>
+                        
+                            <input type="radio" value="Xhosa" name="myLanguage" class="radio-inline">Xhosa
+                      
 
-                    <label class="">
-                        <span>
-                            <input type="radio" value="English" name="myLanguage" class="radio-inline">English<br>
-                        </span>
-                    </label>
+                        
+                            <input type="radio" value="English" name="myLanguage" class="radio-inline">English
+                       
 
-                    <label class="">
-                        <span>
                             <input type="radio" value="Afrikaans" name="myLanguage" class="radio-inline">Afrikaans
-                        </span>
-                    </label>
                 </div>
 
                 <div class="row">
@@ -57,19 +49,18 @@
                 </div>
 
                
-    <button class="button" type="submit">Greet</button>
+    <button class="button2" type="submit">Greet</button> 
     </form>
+    
 </div>
 </div>
 </div>
-
 <form method="POST" action="/clear">
     <div class="row">
         <div class="col-12">
             <div class="clear">
-            {{caltulate}}
             </div>
-           <button class="button" type="submit">Clear</button>
+           <button class="button2" type="submit">Clear</button>
         </div>
     </div>
 </form>
