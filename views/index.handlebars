@@ -27,44 +27,24 @@
             <form method="POST" action="/">
                 Name:
                 <input type="text" class="inputName" maxlength="25" name="firstname" placeholder="enter a name" value=""
-                onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">  {{caltulate}}
+                    onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">{{caltulate}}
+
+
                 <div>
-                        
-                            <input type="radio" value="Xhosa" name="myLanguage" class="radio-inline">Xhosa
-                      
+                    <input type="radio" value="Xhosa" name="myLanguage" class="radio-inline">Xhosa
 
-                        
-                            <input type="radio" value="English" name="myLanguage" class="radio-inline">English
-                       
+                    <input type="radio" value="English" name="myLanguage" class="radio-inline">English
 
-                            <input type="radio" value="Afrikaans" name="myLanguage" class="radio-inline">Afrikaans
+                    <input type="radio" value="Afrikaans" name="myLanguage" class="radio-inline">Afrikaans
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <p class="msg"></p>
-                        {{!-- Greeted names: <p class="counter">{{caltulate}}</p> --}}
-                    
-                    </div>
-                </div>
 
-               
-    <button class="button2" type="submit">Greet</button> 
-    </form>
-    
-</div>
-</div>
-</div>
-<form method="POST" action="/clear">
-    <div class="row">
-        <div class="col-12">
-            <div class="clear">
-            </div>
-           <button class="button2" type="submit">Clear</button>
+                <button class="button2" type="submit">Greet</button>
+                <button class="button2" type="submit">Clear</button>
+            </form>
         </div>
     </div>
-</form>
-
+</div>
 
 
 
@@ -73,7 +53,7 @@
         <div class="greeting-text">
             <h4>{{name}}</h4>
 
-            </div>
+        </div>
     </div>
 </div>
 
@@ -84,5 +64,3 @@
         </div>
     </div>
 </form>
-
-

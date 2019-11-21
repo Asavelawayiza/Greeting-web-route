@@ -40,7 +40,7 @@ module.exports = function greeting(pool) {
 
   }
 
-  async function keepName(){
+  async function keepName() {
 
     return greetedNames
   }
@@ -87,15 +87,15 @@ module.exports = function greeting(pool) {
   async function getCounter(name) {
 
     var count = await pool.query('select greet_count from allnames where greet_name = $1', [name]);
-      return count.rows[0];
-    
+    return count.rows[0];
+
   }
 
-  async function clearCounter () {
+  async function clearCounter() {
     var clear = await pool.query('delete from allnames');
-    
+
     return clear;
-}
+  }
 
   return {
     language,

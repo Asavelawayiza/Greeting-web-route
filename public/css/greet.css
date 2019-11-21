@@ -1,11 +1,11 @@
-/* html {
+html {
   background-image: url("/css/image/greet.jpeg");
   background-size: cover;
   font-family: "Boogaloo", cursive;
   justify-content: center;
 display: flex;
 font-size: 60px;
-} */
+}
 
 .body{
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ font-size: 60px;
   display: flex;
 
 }
-h4{
+ h4{
 
   font-family: "Boogaloo", cursive;
   font-weight: bold;
@@ -30,92 +30,51 @@ h4{
   display: flex;  
 }
 
-h1 {
+  h1 {
   font-family: "Boogaloo", cursive;
   color: black;
   justify-content: center;
   display: flex;
   font-size: 80px;
-}
-
-.language { 
-   font-family: "Boogaloo", cursive;
-   color: black;
-  justify-content: center;
-  display: flex;
-  font-size: 15px;
-  }
-
-    .clear{
-padding: 0.5em;
-font-size: 25px; 
-
-    }
-    form{
-      display: inline;
     }
 
-   
     .button2 {
-  background-color: rgb(220, 230, 228);
-  display: inline-block;
-  font-style: italic;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  margin-left: 5px !important;
-  vertical-align: top;
-  margin-bottom: 0%;display: flex;
-
-}
-
-   .msg {
-    font-family: "Boogaloo", cursive;
-    color: black;
-
-    justify-content: center;
-    display: flex;
-    font-weight: bold;
-    font-size: 10px;
-   }
-
-   
-   .counter{
-    font-family: "Boogaloo", cursive;
-    color: black;
-
-    justify-content: center;
-    display: flex;
-    font-weight: bold;
-    font-size: 15px;
-   }
-
+      background-color: rgb(220, 230, 228);
+      display: inline-block;
+    }
+    .buttonReset {
+      background-color: rgb(220, 230, 228);
+      display: inline-block;
+      
+    }
+ 
    .col-12{
-    font-family: "Boogaloo", cursive;
-
+      font-family: "Boogaloo", cursive;
       justify-content: center;
       display: flex;
       color: black;
-
-
+      
    }
+
    .error{
     font-family: "Boogaloo", cursive;
-font-size: 20px;
+    font-size: 20px;
     justify-content: center;
     display: flex;
     font-weight: bold;
     color: crimson;
    }
+   
    .success{
     font-family: "Boogaloo", cursive;
     font-size: 20px;
-
     justify-content: center;
     display: flex;
     font-weight: bold;
     color: green;
    }
 
-    
+   /* form{
+      display: inline-block;
+     }
+     */

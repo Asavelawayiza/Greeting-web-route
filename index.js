@@ -42,7 +42,7 @@ app.use(flash());
 app.use(express.static("public"));
 app.use(body.urlencoded({ extended: false }));
 
-app.get("/", async function(req, res){
+app.get("/", async function (req, res) {
 
 
   res.render("index", {
@@ -59,19 +59,22 @@ app.post("/", async function (req, res) {
   let name = (req.body.firstname).charAt(0).toUpperCase() + (req.body.firstname).slice(1).toLowerCase();
   let lang = req.body.myLanguage
 
+  let clear = await greet.clearCounter();
+
+
   if (!name) {
-    req.flash('info', 'please enter a name')
+    req.flash('info', 'Please enter a name')
 
   }
   else if (!lang) {
-    req.flash('info', 'please select a language')
+    req.flash('info', 'Please select a language')
     // console.log(req.flash());
 
   } else {
 
-      await greet.language(name, lang)
+    await greet.language(name, lang)
 
-    req.flash('success', 'successfully updated')
+    req.flash('success', 'Successfully updated')
   }
 
 
@@ -86,9 +89,9 @@ app.post("/", async function (req, res) {
 });
 
 app.get("/actions", async function (req, res) {
- 
+
   // console.log('name', await greet.getName());
-  
+
   res.render("actions", {
 
     actions: await greet.getName(),
@@ -101,15 +104,15 @@ app.get('/counter/:user', async function (req, res) {
 
   let users = req.params.user
   // console.log(user +"fghj");
-  
- 
-  let data = 
-      await greet.getCounter(users)
-  
-  console.log('users',  await greet.getCounter(users));
 
 
-  let display =  `Hello, ${users} has been greeted ${data.greet_count} time(s). `
+  let data =
+    await greet.getCounter(users)
+
+  console.log('users', await greet.getCounter(users));
+
+
+  let display = `Hello, ${users} has been greeted ${data.greet_count} time(s). `
 
   res.render('users', {
 
@@ -121,7 +124,7 @@ app.get('/counter/:user', async function (req, res) {
 
 app.post('/clear', async function (req, res) {
   let clear = await greet.clearCounter();
- 
+
   res.redirect('/');
 });
 
