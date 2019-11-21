@@ -27,25 +27,37 @@
             <form method="POST" action="/">
                 Name:
                 <input type="text" class="inputName" maxlength="25" name="firstname" placeholder="enter a name" value=""
-                    onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">{{caltulate}}
-
-
+                    onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                {{caltulate}}
                 <div>
-                    <input type="radio" value="Xhosa" name="myLanguage" class="radio-inline">Xhosa
+                    <label class="">
+                        <span>
+                            <input type="radio" value="Xhosa" name="myLanguage" class="radio-inline">Xhosa<br>
+                        </span>
+                    </label>
 
-                    <input type="radio" value="English" name="myLanguage" class="radio-inline">English
+                    <label class="">
+                        <span>
+                            <input type="radio" value="English" name="myLanguage" class="radio-inline">English<br>
+                        </span>
+                    </label>
 
-                    <input type="radio" value="Afrikaans" name="myLanguage" class="radio-inline">Afrikaans
+                    <label class="">
+                        <span>
+                            <input type="radio" value="Afrikaans" name="myLanguage" class="radio-inline">Afrikaans
+                        </span>
+                    </label>
                 </div>
 
 
+
                 <button class="button2" type="submit">Greet</button>
-                <button class="button2" type="submit">Clear</button>
+                <button class="button2" type="submit" value="Reset" name="resetButton">Clear</button>
+
             </form>
         </div>
     </div>
 </div>
-
 
 
 <div class="row">

@@ -59,8 +59,10 @@ app.post("/", async function (req, res) {
   let name = (req.body.firstname).charAt(0).toUpperCase() + (req.body.firstname).slice(1).toLowerCase();
   let lang = req.body.myLanguage
 
-  let clear = await greet.clearCounter();
 
+  if(req.body.resetButton === 'Reset'){
+    await greet.clearCounter()
+  }else{
 
   if (!name) {
     req.flash('info', 'Please enter a name')
@@ -77,7 +79,7 @@ app.post("/", async function (req, res) {
     req.flash('success', 'Successfully updated')
   }
 
-
+  }
 
 
   res.render("index", {
@@ -85,6 +87,8 @@ app.post("/", async function (req, res) {
     caltulate: await greet.counter(),
 
   });
+
+
 
 });
 
@@ -120,12 +124,6 @@ app.get('/counter/:user', async function (req, res) {
     display
   });
 
-});
-
-app.post('/clear', async function (req, res) {
-  let clear = await greet.clearCounter();
-
-  res.redirect('/');
 });
 
 
